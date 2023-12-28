@@ -1,4 +1,4 @@
-﻿namespace Shop.Main
+﻿namespace Shop
 {
     internal class Program
     {
