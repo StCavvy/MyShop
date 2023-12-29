@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using FluentMigrator.Runner;
 using System.Reflection;
+using Shop.Main.Migrations;
 
 
 
@@ -13,10 +14,16 @@ namespace Shop
         private static IConfigurationRoot config;
         static void Main()
         {
-            using (var connection = new SqlConnection(config.GetConnectionString("MyShop")))
-            {
 
+            Initconfig();
+
+            var serviceProvider = CreateServices();
+
+            using (var scope = serviceProvider.CreateScope())
+            {
+                RunMigration(scope.ServiceProvider);
             }
+            
         }
 
         public static IServiceProvider CreateServices()
@@ -32,13 +39,16 @@ namespace Shop
 
         private static void UpdateDatabase(IServiceProvider serviceProvider)
         {
-            // Instantiate the runner
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
 
-            // Execute the migrations
             runner.MigrateUp();
         }
-
+        private static void RunMigration(IServiceProvider serviceProvider)
+        {
+            var migrationService = serviceProvider.GetRequiredService<IMigrationRunner>();
+            migrationService.ListMigrations();
+            migrationService.MigrateUp();
+        }
 
         public static void Initconfig()
         {

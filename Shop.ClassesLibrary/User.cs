@@ -11,14 +11,8 @@ namespace Shop
         public required int ID { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
-        public UserType UserType { get; set; }
-        public DateTime RegistrationDate { get; set; }
-
-
-        public User ()
-        {
-            RegistrationDate = DateTime.Now;
-        }
+        public required UserType UserType { get; set; }
+        public required DateTime RegistrationDate { get; set; }
 
     }
 }
