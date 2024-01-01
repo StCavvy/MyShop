@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Main.Migrations
+namespace Shop
 {
-    [Migration(29122023009)]
-    public class InitialSP_29122023009 : Migration
+    [Migration(291220230009)]
+    public class InitialSP_291220230009 : Migration
     {
         public override void Up()
         {
@@ -31,6 +31,7 @@ namespace Shop.Main.Migrations
             var sql = """
                       DROP PROCEDURE IF EXISTS [Order].[DeleteOrderById]
                       """;
+            Execute.Sql(sql);
         }
 
     }

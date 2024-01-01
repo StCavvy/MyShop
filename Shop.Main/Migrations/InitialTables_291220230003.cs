@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    [Migration(29122023003)]
-    public class InitialTables_29122023003 : Migration
+    [Migration(291220230003)]
+    public class InitialTables_291220230003 : Migration
     {
         public override void Up()
         {

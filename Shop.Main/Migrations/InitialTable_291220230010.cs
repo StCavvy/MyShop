@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Main.Migrations
+namespace Shop
 {
-    [Migration(29122023010)]
-    public class InitialTable_29122023010 : Migration
+    [Migration(291220230010)]
+    public class InitialTable_291220230010 : Migration
     {
         public override void Up()
         {

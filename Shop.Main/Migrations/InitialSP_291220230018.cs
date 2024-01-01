@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    [Migration(29122023007)]
-    public class InitialSP_29122023007 : Migration
+    [Migration(291220230018)]
+    public class InitialSP_291220230018 : Migration
     {
         public override void Up()
         {
             var sql = """
-                      DROP PROCEDURE IF EXISTS [Order].[GetOrderInfoById]
+                      DROP PROCEDURE IF EXISTS [User].[GetUserById]
                       GO
 
-                      CREATE PROCEDURE [Order].[GetOrderInfoById]
-                        @OrderId int
+                      CREATE PROCEDURE [User].[GetUserById]
+                        @ProductId int
                       As
                         SELECT* 
-                        FROM [dbo].[Order] 
-                        WHERE OrderId = @OrderId
+                        FROM [dbo].[User] 
+                        WHERE Id = @ProductId
                       GO
                       """;
             Execute.Sql(sql);
@@ -29,9 +29,9 @@ namespace Shop
         public override void Down()
         {
             var sql = """
-                      DROP PROCEDURE IF EXISTS [Order].[GetOrderInfoById]
+                      DROP PROCEDURE IF EXISTS [User].[GetUserById]
                       """;
             Execute.Sql(sql);
-        }   
+        }
     }
 }

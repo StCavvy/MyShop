@@ -8,8 +8,8 @@ using FluentMigrator;
 
 namespace Shop
 {
-    [Migration(28122023001)]
-    public class InitialTables_28122023001 : Migration
+    [Migration(281220230001)]
+    public class InitialTables_281220230001 : Migration
     {
 
         public override void Up()

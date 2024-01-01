@@ -7,29 +7,23 @@ using FluentMigrator;
 
 namespace Shop
 {
-    [Migration(29122023006)]
-    public class InitialSP_29122023006 : Migration
+    [Migration(291220230006)]
+    public class InitialSP_291220230006 : Migration
     {
         public override void Up()
         {
             var sql = """
-                      DROP SCHEMA IF EXISTS [Order]
-                      GO
-
-                      CREATE SCHEMA [Order]
-                      GO
-
                       DROP PROCEDURE IF EXISTS [Order].[AddNewOrder]
                       GO
 
                       CREATE PROCEDURE [Order].[AddNewOrder] 
                         @OrderId int,
-                      	@UserId int,
-                      	@OrderDate datetime,
-                      	@ProductsCount int,
-                      	@PackerId int,
-                      	@OrderState int,
-                      	@TotalPrice decimal
+                         	@UserId int,
+                         	@OrderDate datetime,
+                         	@ProductsCount int,
+                         	@PackerId int,
+                         	@OrderState int,
+                         	@TotalPrice decimal
 
                       AS   
                          INSERT INTO [dbo].[Order] (OrderId, UserID, OrderDate, ProductCounts, PackerId, OrderState, TotalPrice)
@@ -42,8 +36,6 @@ namespace Shop
         {
             var sql = """
                       DROP PROCEDURE IF EXISTS [Order].[AddNewOrder] 
-                      GO
-                      DROP SCHEMA IF EXISTS [Order]
                       """;
             Execute.Sql(sql);
         }

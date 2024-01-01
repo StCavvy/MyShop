@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    [Migration(29122023005)]
+    [Migration(291220230005)]
 
-    public class InitialFK_29122023005 : Migration
+    public class InitialFK_291220230005 : Migration
     {
         public override void Up()
         {

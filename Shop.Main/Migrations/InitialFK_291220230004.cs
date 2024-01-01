@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Main.Migrations
+namespace Shop
 {
-    [Migration(29122023004)]
-    public class InitialFK_29122023004 : Migration
+    [Migration(291220230004)]
+    public class InitialFK_291220230004 : Migration
     {
 
 

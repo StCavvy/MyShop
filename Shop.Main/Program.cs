@@ -3,7 +3,6 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using FluentMigrator.Runner;
 using System.Reflection;
-using Shop.Main.Migrations;
 
 
 
