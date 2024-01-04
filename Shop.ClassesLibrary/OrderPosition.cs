@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    public enum UserType : int
+    public class OrderPosition
     {
-        Customer = 0,
-        Worker = 1,
-        Administrator = 2
+        public required int OrderId { get; set; }
+
+        public required int ProductId { get; set; }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop.ClassesLibrary
 {
-    public enum OrderStates 
+    public enum OrderStates : int
     { 
         Pending = 0,
         Packing = 1,

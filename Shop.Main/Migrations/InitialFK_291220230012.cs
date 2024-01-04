@@ -15,7 +15,7 @@ namespace Shop.Main.Migrations
             string sql = """
                          IF NOT EXISTS (SELECT * FROM sys.objects o WHERE o.object_id = object_id(N'[FK_Packer_To_Order]') AND OBJECTPROPERTY(o.object_id, N'IsForeignKey') = 1)
                          BEGIN
-                             ALTER TABLE [dbo].[Order] ADD CONSTRAINT [FK_Packer_To_Order] FOREIGN KEY ([PackerId]) REFERENCES [User] ([Id])
+                             ALTER TABLE [dbo].[Order] ADD CONSTRAINT [FK_Packer_To_Order] FOREIGN KEY ([PackerId]) REFERENCES [User] ([UserId])
                          END
                          """;
             Execute.Sql(sql);

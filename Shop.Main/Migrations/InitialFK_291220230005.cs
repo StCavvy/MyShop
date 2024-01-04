@@ -16,7 +16,7 @@ namespace Shop
             string sql = """
                          IF NOT EXISTS (SELECT * FROM sys.objects o WHERE o.object_id = object_id(N'[FK_User_to_Order]') AND OBJECTPROPERTY(o.object_id, N'IsForeignKey') = 1)
                          BEGIN
-                             ALTER TABLE [dbo].[Order] ADD CONSTRAINT [FK_User_To_Order] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id])
+                             ALTER TABLE [dbo].[Order] ADD CONSTRAINT [FK_User_To_Order] FOREIGN KEY ([UserId]) REFERENCES [User] ([UserId])
                          END
 
  

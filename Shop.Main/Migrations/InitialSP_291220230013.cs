@@ -17,14 +17,14 @@ namespace Shop
                 GO
 
                 CREATE PROCEDURE [Product].[AddProduct]
-                    @Id int,
+                    @ProductId int,
                 	@Name nvarchar(250),
                 	@Description nvarchar(4000),
                 	@Price decimal,
                 	@Category int 
                 AS 
-                INSERT INTO [dbo].[Product] (Id, Name, Description, Price, Category)
-                VALUES (@Id, @Name, @Description, @Price, @Category)
+                INSERT INTO [dbo].[Product] (ProductId, Name, Description, Price, Category)
+                VALUES (@ProductId, @Name, @Description, @Price, @Category)
                 GO
                 """;
             Execute.Sql(sql);

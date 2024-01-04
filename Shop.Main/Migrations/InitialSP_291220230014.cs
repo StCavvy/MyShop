@@ -21,7 +21,7 @@ namespace Shop
                       As
                         SELECT* 
                         FROM [dbo].[Product] 
-                        WHERE Id = @ProductId
+                        WHERE ProductId = @ProductId
                       GO
                       """;
             Execute.Sql(sql);

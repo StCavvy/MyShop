@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    public enum ProductType 
+    public enum ProductType : int
     {
         ElectricalInstrument = 1,
         HandInstrument = 2,

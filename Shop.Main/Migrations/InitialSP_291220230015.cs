@@ -25,12 +25,12 @@ namespace Shop
 
                       AS   
                          UPDATE [Product].[UpdateProductById]
-                         SET  Id = @ProductId,
+                         SET  ProductId = @ProductId,
                               Name = @Name,
                               Description = @Description,
                               Price = @Price,
                               ProductType = @ProductType
-                         WHERE Id = @ProductId
+                         WHERE ProductId = @ProductId
                       GO
                       """;
             Execute.Sql(sql);

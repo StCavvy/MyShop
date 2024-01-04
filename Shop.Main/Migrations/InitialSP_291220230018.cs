@@ -13,15 +13,15 @@ namespace Shop
         public override void Up()
         {
             var sql = """
-                      DROP PROCEDURE IF EXISTS [User].[GetUserById]
+                      DROP PROCEDURE IF EXISTS [Users].[GetUserById]
                       GO
 
-                      CREATE PROCEDURE [User].[GetUserById]
-                        @ProductId int
+                      CREATE PROCEDURE [Users].[GetUserById]
+                        @UserId int
                       As
                         SELECT* 
                         FROM [dbo].[User] 
-                        WHERE Id = @ProductId
+                        WHERE UserId = @UserId
                       GO
                       """;
             Execute.Sql(sql);
@@ -29,7 +29,7 @@ namespace Shop
         public override void Down()
         {
             var sql = """
-                      DROP PROCEDURE IF EXISTS [User].[GetUserById]
+                      DROP PROCEDURE IF EXISTS [Users].[GetUserById]
                       """;
             Execute.Sql(sql);
         }

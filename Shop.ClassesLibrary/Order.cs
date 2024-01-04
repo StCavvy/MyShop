@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    internal class Order
+    public class Order
     {
-        public required int ID { get; set; }
-        public required int UserId { get; set; }
+        public int OrderId { get; set; }
+        public int UserId { get; set; }
         public DateTime OrderDate { get; set; }
-        public required int ProductsCount { get; set; }
-        public required List<int> ProductsId { get; set; }
-        public required int PackerId { get; set; }
+        public int ProductCounts { get; set; }
+
+        public List<int> ProductsId = new List<int>();
+        public int PackerId { get; set; }
         public OrderStates OrderState { get; set; }
-        public decimal TotalPrice {  get; set; }
+        public decimal TotalPrice { get; set; }
+        public string? PackerName { get; set; }
+        public string? UserName { get; set; }
 
     }
 }

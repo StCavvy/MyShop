@@ -21,7 +21,7 @@ namespace Shop
                       AS   
                          DELETE 
                          FROM [dbo].[Product]
-                         WHERE Id = @ProductId
+                         WHERE ProductId = @ProductId
                       GO
                       """;
             Execute.Sql(sql);

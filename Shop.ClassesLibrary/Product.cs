@@ -8,7 +8,7 @@ namespace Shop
 {
     public class Product
     {
-        public required int ID { get; set; }
+        public required int ProductId { get; set; }
         public required string Name { get; set; }
         public string? Description { get; set; }
         public required decimal Price { get; set; }

@@ -19,7 +19,7 @@ namespace Shop
             else
             {
                 Create.Table("Product")
-                    .WithColumn("Id").AsInt32().NotNullable().PrimaryKey()
+                    .WithColumn("ProductId").AsInt32().NotNullable().PrimaryKey()
                     .WithColumn("Name").AsString().NotNullable()
                     .WithColumn("Description").AsString()
                     .WithColumn("Price").AsDecimal().NotNullable()

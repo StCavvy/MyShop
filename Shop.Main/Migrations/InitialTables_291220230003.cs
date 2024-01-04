@@ -19,7 +19,7 @@ namespace Shop
             else
             {
                 Create.Table("User")
-                        .WithColumn("Id").AsInt32().NotNullable().PrimaryKey()
+                        .WithColumn("UserId").AsInt32().NotNullable().PrimaryKey()
                         .WithColumn("FirstName").AsString().NotNullable()
                         .WithColumn("LastName").AsString().NotNullable()
                         .WithColumn("UserType").AsInt32().NotNullable()

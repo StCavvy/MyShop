@@ -21,13 +21,13 @@ namespace Shop
             else
             {
                 Create.Table("Order")
-                    .WithColumn("Id").AsInt32().NotNullable().PrimaryKey()
+                    .WithColumn("OrderId").AsInt32().NotNullable().PrimaryKey()
                     .WithColumn("UserId").AsInt32().NotNullable()
                     .WithColumn("OrderDate").AsDateTime()
                     .WithColumn("ProductCounts").AsInt32().NotNullable()
                     .WithColumn("PackerId").AsInt32().NotNullable()
                     .WithColumn("OrderState").AsInt32().NotNullable()
-                    .WithColumn("TotalPrice").AsInt32().NotNullable();
+                    .WithColumn("TotalPrice").AsDecimal().NotNullable();
             }
 
         }

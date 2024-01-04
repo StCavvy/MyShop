@@ -17,7 +17,7 @@ namespace Shop
                       GO
 
                       CREATE PROCEDURE [Order].[AddNewOrder] 
-                        @OrderId int,
+                            @OrderId int,
                          	@UserId int,
                          	@OrderDate datetime,
                          	@ProductsCount int,
