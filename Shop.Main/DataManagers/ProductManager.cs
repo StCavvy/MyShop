@@ -12,19 +12,22 @@ namespace Shop.Main.DataManagers
 {
     internal class ProductManager
     {
-        public static void AddProduct(int ID, string Name, string? Description, decimal Price, ProductType Category, string str)
+        public static async void AddProduct(int ID, string Name, string? Description, decimal Price, ProductType Category, string str)
         {
-            using (var connection = new SqlConnection(str))
+            await Task.Run(() =>
             {
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("ProductId", ID);
-                parameters.Add("Name", Name);
-                parameters.Add("Description", Description);
-                parameters.Add("Price", Price);
-                parameters.Add("Category", Category);
+                using (var connection = new SqlConnection(str))
+                {
+                    DynamicParameters parameters = new DynamicParameters();
+                    parameters.Add("ProductId", ID);
+                    parameters.Add("Name", Name);
+                    parameters.Add("Description", Description);
+                    parameters.Add("Price", Price);
+                    parameters.Add("Category", Category);
 
-                connection.Query("Order.AddProduct", parameters, commandType: CommandType.StoredProcedure);
-            }
+                    connection.Query("Order.AddProduct", parameters, commandType: CommandType.StoredProcedure);
+                }
+            });
         }
     }
 }
