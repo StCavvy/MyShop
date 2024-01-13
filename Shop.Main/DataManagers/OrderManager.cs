@@ -45,13 +45,14 @@ namespace Shop.Main.DataManagers
         }
         public static async Task<Order> GetOrderById(int ID, string str)
         {
+            Order order = new Order();
             await Task.Run(() =>
             {
                 using (var connection = new SqlConnection(str))
                 {
                     var i = 0;
                     var values = new { OrderId = ID };
-                    var order = connection.QuerySingleOrDefault<Order>("Order.GetOrderInfoById", values, commandType: CommandType.StoredProcedure);
+                    order = connection.QuerySingleOrDefault<Order>("Order.GetOrderInfoById", values, commandType: CommandType.StoredProcedure);
                     var storedProcedureName = "Order.GetOrderPosition";
                     var result = connection.QueryMultiple(storedProcedureName, values, commandType: CommandType.StoredProcedure);
                     var OrderPositions = result.Read();
@@ -59,9 +60,11 @@ namespace Shop.Main.DataManagers
                     {
                         order.ProductsId.Add(position.ProductId);
                     }
-                    return order;
+
                 }
+
             });
+            return order;
         }
     }
 }
